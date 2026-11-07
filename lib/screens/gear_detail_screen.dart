@@ -5,6 +5,7 @@ import '../models/outdoor_gear.dart';
 import '../providers/favorite_provider.dart';
 import '../utils/formatters.dart';
 import 'create_rental_screen.dart';
+import 'edit_gear_screen.dart';
 
 class GearDetailScreen extends StatelessWidget {
   final OutdoorGear gear;
@@ -73,6 +74,18 @@ class GearDetailScreen extends StatelessWidget {
                             : 'Ditambahkan ke wishlist!',
                       ),
                       behavior: SnackBarBehavior.floating,
+                    ),
+                  );
+                },
+              ),
+              IconButton(
+                icon: const Icon(Icons.edit_outlined, color: Colors.white),
+                tooltip: 'Edit Data Alat',
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => EditGearScreen(gear: gear),
                     ),
                   );
                 },
@@ -348,8 +361,23 @@ class GearDetailScreen extends StatelessWidget {
                   ],
                 ),
               ),
+              OutlinedButton.icon(
+                style: OutlinedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                ),
+                icon: const Icon(Icons.edit_outlined, size: 16),
+                label: const Text('Edit Alat', style: TextStyle(fontSize: 12)),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => EditGearScreen(gear: gear),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(width: 8),
               Expanded(
-                flex: 2,
                 child: ElevatedButton.icon(
                   icon: const Icon(Icons.calendar_today_outlined),
                   label: const Text('Sewa Sekarang'),

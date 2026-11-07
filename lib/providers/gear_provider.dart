@@ -128,4 +128,22 @@ class GearProvider extends ChangeNotifier {
     _sortBy = sort;
     notifyListeners();
   }
+
+  void addGear(OutdoorGear gear) {
+    _gears.insert(0, gear);
+    notifyListeners();
+  }
+
+  void updateGear(OutdoorGear gear) {
+    final index = _gears.indexWhere((g) => g.id == gear.id);
+    if (index != -1) {
+      _gears[index] = gear;
+      notifyListeners();
+    }
+  }
+
+  void deleteGear(String id) {
+    _gears.removeWhere((g) => g.id == id);
+    notifyListeners();
+  }
 }

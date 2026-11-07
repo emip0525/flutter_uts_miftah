@@ -39,15 +39,17 @@ Aplikasi dibangun menggunakan **Layered Architecture** dengan alur data satu ara
 
 ---
 
-### 3. Daftar Screen Fungsional (Total 8 Screen)
-1. **HomeScreen (Beranda):** Banner promosi, widget cuaca REST API real-time, kategori cepat, rekomendasi alat outdoor terpopuler.
-2. **CatalogScreen (Katalog):** Grid alat responsif (2 kolom di HP, 3-4 kolom di layar lebar), search bar instan, filter kategori, sorting harga & rating.
-3. **GearDetailScreen (Detail Produk):** Foto hero, badge kategori, rating, kartu tarif & deposit, tabel spesifikasi teknis, daftar fitur, tombol favorit, tombol sewa sekarang.
-4. **CreateRentalScreen (Form Tambah Sewa):** Form validasi nama penyewa, nomor WhatsApp, pemilihan alat, date picker tanggal mulai, counter durasi sewa, kalkulasi total otomatis, dan tombol simpan ke database.
-5. **EditRentalScreen (Form Ubah Data Sewa):** Form untuk mengubah nama penyewa, nomor HP, durasi sewa (disertai penyesuaian total biaya), catatan, serta perubahan status sewa (Aktif, Selesai, Dibatalkan).
-6. **RentalListScreen (Kelola Transaksi Sewa):** Menampilkan ringkasan statistik (Total Sewa, Aktif, Selesai, Pendapatan), filter status, daftar kartu sewa, tombol edit, dan tombol hapus dengan konfirmasi dialog.
-7. **FavoritesScreen (Wishlist):** Menampilkan peralatan yang difavoritkan pengguna, tombol hapus dari favorit, dan tombol aksi sewa langsung.
-8. **ProfileScreen (Profil Pengembang):** Menampilkan identitas mahasiswa (Nama, NIM, Kelas), informasi akademik, detail arsitektur aplikasi, dialog skema database, dan tombol sinkronisasi API.
+### 3. Daftar Screen Fungsional (Total 10 Screen)
+1. **HomeScreen (Beranda):** Banner promosi, widget cuaca REST API real-time, kategori cepat, rekomendasi alat outdoor terpopuler, tombol tambah alat.
+2. **CatalogScreen (Katalog):** Grid alat responsif (2 kolom di HP, 3-4 kolom di layar lebar), search bar instan, filter kategori, sorting harga & rating, tombol Tambah Alat Baru.
+3. **GearDetailScreen (Detail Produk):** Foto hero, badge kategori, rating, kartu tarif & deposit, tabel spesifikasi teknis, daftar fitur, tombol favorit, tombol Edit Alat, tombol sewa sekarang.
+4. **AddGearScreen (Form Tambah Alat Outdoor):** Form input alat baru ke katalog (nama, merk, kategori, tarif sewa/hari, uang jaminan, jumlah stok, deskripsi, spesifikasi).
+5. **EditGearScreen (Form Ubah Data Alat Outdoor):** Form untuk mengubah informasi alat, tarif sewa, deposit, status ketersediaan stok, dan deskripsi produk.
+6. **CreateRentalScreen (Form Tambah Sewa):** Form validasi nama penyewa, nomor WhatsApp, pemilihan alat, date picker tanggal mulai, counter durasi sewa, kalkulasi total otomatis, dan tombol simpan ke database.
+7. **EditRentalScreen (Form Ubah Data Sewa):** Form untuk mengubah nama penyewa, nomor HP, durasi sewa (disertai penyesuaian total biaya), catatan, serta perubahan status sewa (Aktif, Selesai, Dibatalkan).
+8. **RentalListScreen (Kelola Transaksi Sewa):** Menampilkan ringkasan statistik (Total Sewa, Aktif, Selesai, Pendapatan), filter status, daftar kartu sewa, tombol edit, dan tombol hapus dengan konfirmasi dialog.
+9. **FavoritesScreen (Wishlist):** Menampilkan peralatan yang difavoritkan pengguna, tombol hapus dari favorit, dan tombol aksi sewa langsung.
+10. **ProfileScreen (Profil Pengembang):** Menampilkan identitas mahasiswa (Nama, NIM, Kelas), informasi akademik, detail arsitektur aplikasi, dialog skema database, dan tombol sinkronisasi API.
 
 ---
 

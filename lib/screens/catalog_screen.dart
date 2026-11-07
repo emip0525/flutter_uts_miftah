@@ -8,6 +8,7 @@ import '../widgets/loading_state.dart';
 import '../widgets/error_state.dart';
 import '../widgets/empty_state.dart';
 import 'create_rental_screen.dart';
+import 'add_gear_screen.dart';
 
 class CatalogScreen extends StatefulWidget {
   const CatalogScreen({super.key});
@@ -40,6 +41,16 @@ class _CatalogScreenState extends State<CatalogScreen> {
         title: const Text('Katalog Alat Outdoor'),
         actions: [
           IconButton(
+            icon: const Icon(Icons.add_box_outlined),
+            tooltip: 'Tambah Alat Baru ke Katalog',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const AddGearScreen()),
+              );
+            },
+          ),
+          IconButton(
             icon: const Icon(Icons.add_shopping_cart),
             tooltip: 'Sewa Baru',
             onPressed: () {
@@ -50,6 +61,18 @@ class _CatalogScreenState extends State<CatalogScreen> {
             },
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        backgroundColor: AppConstants.primaryGreen,
+        foregroundColor: Colors.white,
+        icon: const Icon(Icons.add),
+        label: const Text('Tambah Alat', style: TextStyle(fontWeight: FontWeight.bold)),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const AddGearScreen()),
+          );
+        },
       ),
       body: RefreshIndicator(
         onRefresh: () => gearProvider.loadGears(),

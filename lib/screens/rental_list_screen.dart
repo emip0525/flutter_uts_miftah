@@ -78,6 +78,16 @@ class RentalListScreen extends StatelessWidget {
         title: const Text('Kelola Sewa & Transaksi'),
         actions: [
           IconButton(
+            icon: const Icon(Icons.add_circle_outline),
+            tooltip: 'Tambah Sewa Baru',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const CreateRentalScreen()),
+              );
+            },
+          ),
+          IconButton(
             icon: const Icon(Icons.refresh),
             tooltip: 'Segarkan data',
             onPressed: () => rentalProvider.fetchBookings(),

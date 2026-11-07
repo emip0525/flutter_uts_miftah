@@ -5,6 +5,7 @@ import '../models/outdoor_gear.dart';
 import '../providers/favorite_provider.dart';
 import '../utils/formatters.dart';
 import '../screens/gear_detail_screen.dart';
+import '../screens/edit_gear_screen.dart';
 
 class GearCard extends StatelessWidget {
   final OutdoorGear gear;
@@ -81,6 +82,35 @@ class GearCard extends StatelessWidget {
                         color: Colors.white,
                         fontSize: 10,
                         fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ),
+                // Edit Button
+                Positioned(
+                  top: 8,
+                  right: 44,
+                  child: Material(
+                    color: Colors.white,
+                    shape: const CircleBorder(),
+                    elevation: 2,
+                    child: InkWell(
+                      customBorder: const CircleBorder(),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => EditGearScreen(gear: gear),
+                          ),
+                        );
+                      },
+                      child: const Padding(
+                        padding: EdgeInsets.all(6.0),
+                        child: Icon(
+                          Icons.edit_outlined,
+                          size: 18,
+                          color: AppConstants.primaryGreen,
+                        ),
                       ),
                     ),
                   ),

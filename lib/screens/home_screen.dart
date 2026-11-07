@@ -6,6 +6,7 @@ import '../widgets/gear_card.dart';
 import '../widgets/mountain_weather_card.dart';
 import '../widgets/responsive_layout.dart';
 import 'create_rental_screen.dart';
+import 'add_gear_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -44,6 +45,16 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.add_box_outlined),
+            tooltip: 'Tambah Alat Baru',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const AddGearScreen()),
+              );
+            },
+          ),
           IconButton(
             icon: const Icon(Icons.refresh),
             tooltip: 'Segarkan data',

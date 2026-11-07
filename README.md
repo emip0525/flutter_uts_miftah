@@ -124,8 +124,10 @@ lib/
 │   ├── home_screen.dart            # Dashboard beranda aplikasi
 │   ├── catalog_screen.dart         # Screen katalog alat outdoor dengan filter & search
 │   ├── gear_detail_screen.dart     # Screen detail spesifikasi perlengkapan
-│   ├── create_rental_screen.dart   # Screen form tambah transaksi sewa (Create)
-│   ├── edit_rental_screen.dart     # Screen form ubah data sewa (Update)
+│   ├── add_gear_screen.dart        # Screen form tambah alat baru ke katalog (Create Gear)
+│   ├── edit_gear_screen.dart       # Screen form ubah data alat outdoor (Update Gear)
+│   ├── create_rental_screen.dart   # Screen form tambah transaksi sewa (Create Rental)
+│   ├── edit_rental_screen.dart     # Screen form ubah data sewa (Update Rental)
 │   ├── rental_list_screen.dart     # Screen kelola daftar sewa & konfirmasi hapus (Read & Delete)
 │   ├── favorites_screen.dart       # Screen daftar wishlist favorit
 │   └── profile_screen.dart         # Screen identitas pengembang UTS & info teknis
