@@ -42,6 +42,7 @@ class GearCard extends StatelessWidget {
                   color: Colors.grey.shade200,
                   child: Image.network(
                     gear.imageUrl,
+                    key: ValueKey(gear.imageUrl),
                     fit: BoxFit.cover,
                     errorBuilder: (context, error, stackTrace) {
                       return Container(

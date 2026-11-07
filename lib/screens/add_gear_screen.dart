@@ -30,6 +30,50 @@ class _AddGearScreenState extends State<AddGearScreen> {
   String _selectedCategory = 'Tenda & Shelter';
   bool _isSaving = false;
 
+  // Galeri foto outdoor berkualitas tinggi
+  static const List<Map<String, String>> photoPresets = [
+    {
+      'title': 'Tenda Dome',
+      'url': 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800',
+    },
+    {
+      'title': 'Tenda Camp',
+      'url': 'https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=800',
+    },
+    {
+      'title': 'Carrier Deuter',
+      'url': 'https://images.unsplash.com/photo-1622260614153-03223fb72052?w=800',
+    },
+    {
+      'title': 'Carrier Merah',
+      'url': 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800',
+    },
+    {
+      'title': 'Sleeping Bag',
+      'url': 'https://images.unsplash.com/photo-1517824806704-9040b037703b?w=800',
+    },
+    {
+      'title': 'Kompor & Nesting',
+      'url': 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=800',
+    },
+    {
+      'title': 'Headlamp Senter',
+      'url': 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?w=800',
+    },
+    {
+      'title': 'Sepatu Daki',
+      'url': 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800',
+    },
+    {
+      'title': 'Trekking Pole',
+      'url': 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800',
+    },
+    {
+      'title': 'Matras Tiup',
+      'url': 'https://images.unsplash.com/photo-1504851149312-7a075b496cc7?w=800',
+    },
+  ];
+
   @override
   void dispose() {
     _nameController.dispose();
@@ -164,6 +208,159 @@ class _AddGearScreenState extends State<AddGearScreen> {
 
               const SizedBox(height: 24),
 
+              // Live Image Preview Box
+              const Text(
+                'Foto / Gambar Alat *',
+                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
+              ),
+              const SizedBox(height: 6),
+              Container(
+                width: double.infinity,
+                height: 180,
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade100,
+                  borderRadius: BorderRadius.circular(14),
+                  border: Border.all(color: AppConstants.primaryGreen.withValues(alpha: 0.3)),
+                ),
+                clipBehavior: Clip.antiAlias,
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    Image.network(
+                      _imageUrlController.text.trim(),
+                      key: ValueKey(_imageUrlController.text.trim()),
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) => Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.broken_image_outlined, size: 48, color: Colors.grey.shade400),
+                            const SizedBox(height: 8),
+                            Text(
+                              'Gambar belum termuat / URL tidak valid',
+                              style: TextStyle(fontSize: 12, color: Colors.grey.shade600),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      bottom: 8,
+                      right: 8,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: Colors.black.withValues(alpha: 0.7),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: const Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(Icons.remove_red_eye, color: Colors.white, size: 14),
+                            SizedBox(width: 4),
+                            Text(
+                              'Live Preview',
+                              style: TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              const SizedBox(height: 12),
+
+              // Preset Photo Gallery Selector
+              const Text(
+                'Pilih Cepat dari Galeri Outdoor:',
+                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Colors.grey),
+              ),
+              const SizedBox(height: 8),
+              SizedBox(
+                height: 85,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: photoPresets.length,
+                  itemBuilder: (context, index) {
+                    final item = photoPresets[index];
+                    final isSelected = _imageUrlController.text.trim() == item['url'];
+                    return GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          _imageUrlController.text = item['url']!;
+                        });
+                      },
+                      child: Container(
+                        width: 75,
+                        margin: const EdgeInsets.only(right: 10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: isSelected ? AppConstants.primaryGreen : Colors.grey.shade300,
+                            width: isSelected ? 2.5 : 1.0,
+                          ),
+                        ),
+                        clipBehavior: Clip.antiAlias,
+                        child: Stack(
+                          fit: StackFit.expand,
+                          children: [
+                            Image.network(
+                              item['url']!,
+                              fit: BoxFit.cover,
+                            ),
+                            Container(
+                              color: Colors.black.withValues(alpha: 0.35),
+                            ),
+                            Center(
+                              child: Text(
+                                item['title']!,
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            if (isSelected)
+                              const Positioned(
+                                top: 4,
+                                right: 4,
+                                child: Icon(Icons.check_circle, color: Colors.greenAccent, size: 16),
+                              ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+
+              const SizedBox(height: 12),
+
+              // URL Input
+              CustomTextField(
+                controller: _imageUrlController,
+                label: 'Atau Masukkan Tautan (URL) Gambar Kustom',
+                hint: 'https://...',
+                prefixIcon: Icons.link,
+                onChanged: (_) => setState(() {}),
+                suffixIcon: _imageUrlController.text.isNotEmpty
+                    ? IconButton(
+                        icon: const Icon(Icons.clear, size: 18),
+                        onPressed: () {
+                          setState(() {
+                            _imageUrlController.clear();
+                          });
+                        },
+                      )
+                    : null,
+              ),
+
+              const SizedBox(height: 18),
+
               // Nama Alat
               CustomTextField(
                 controller: _nameController,
@@ -287,16 +484,6 @@ class _AddGearScreenState extends State<AddGearScreen> {
                 label: 'Estimasi Berat',
                 hint: 'Contoh: 1.8 kg',
                 prefixIcon: Icons.scale_outlined,
-              ),
-
-              const SizedBox(height: 18),
-
-              // Image URL
-              CustomTextField(
-                controller: _imageUrlController,
-                label: 'URL Gambar Alat',
-                hint: 'https://...',
-                prefixIcon: Icons.image_outlined,
               ),
 
               const SizedBox(height: 18),

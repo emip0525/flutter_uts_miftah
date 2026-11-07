@@ -3,24 +3,37 @@ import 'package:provider/provider.dart';
 import '../config/app_constants.dart';
 import '../models/outdoor_gear.dart';
 import '../providers/favorite_provider.dart';
+import '../providers/gear_provider.dart';
 import '../utils/formatters.dart';
 import 'create_rental_screen.dart';
 import 'edit_gear_screen.dart';
 
-class GearDetailScreen extends StatelessWidget {
+class GearDetailScreen extends StatefulWidget {
   final OutdoorGear gear;
 
   const GearDetailScreen({super.key, required this.gear});
 
   @override
+  State<GearDetailScreen> createState() => _GearDetailScreenState();
+}
+
+class _GearDetailScreenState extends State<GearDetailScreen> {
+  @override
   Widget build(BuildContext context) {
+    // Mengambil data terkini dari GearProvider secara reaktif
+    final gearProvider = Provider.of<GearProvider>(context);
+    final gear = gearProvider.gears.firstWhere(
+      (g) => g.id == widget.gear.id,
+      orElse: () => widget.gear,
+    );
+
     final favProvider = Provider.of<FavoriteProvider>(context);
     final isFav = favProvider.isFavorite(gear.id);
 
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          // Collapsible Image AppBar
+          // Collapsible Image AppBar dengan key reaktif untuk pergantian gambar instan
           SliverAppBar(
             expandedHeight: 300,
             pinned: true,
@@ -30,6 +43,7 @@ class GearDetailScreen extends StatelessWidget {
                 children: [
                   Image.network(
                     gear.imageUrl,
+                    key: ValueKey(gear.imageUrl),
                     fit: BoxFit.cover,
                     errorBuilder: (context, error, stackTrace) {
                       return Container(
@@ -37,6 +51,12 @@ class GearDetailScreen extends StatelessWidget {
                         child: const Center(
                           child: Icon(Icons.terrain, size: 80, color: Colors.white54),
                         ),
+                      );
+                    },
+                    loadingBuilder: (context, child, loadingProgress) {
+                      if (loadingProgress == null) return child;
+                      return const Center(
+                        child: CircularProgressIndicator(color: Colors.white),
                       );
                     },
                   ),
@@ -80,14 +100,17 @@ class GearDetailScreen extends StatelessWidget {
               ),
               IconButton(
                 icon: const Icon(Icons.edit_outlined, color: Colors.white),
-                tooltip: 'Edit Data Alat',
-                onPressed: () {
-                  Navigator.push(
+                tooltip: 'Edit Data & Gambar Alat',
+                onPressed: () async {
+                  final updated = await Navigator.push<OutdoorGear>(
                     context,
                     MaterialPageRoute(
                       builder: (_) => EditGearScreen(gear: gear),
                     ),
                   );
+                  if (updated != null && mounted) {
+                    setState(() {});
+                  }
                 },
               ),
               IconButton(
@@ -367,13 +390,16 @@ class GearDetailScreen extends StatelessWidget {
                 ),
                 icon: const Icon(Icons.edit_outlined, size: 16),
                 label: const Text('Edit Alat', style: TextStyle(fontSize: 12)),
-                onPressed: () {
-                  Navigator.push(
+                onPressed: () async {
+                  final updated = await Navigator.push<OutdoorGear>(
                     context,
                     MaterialPageRoute(
                       builder: (_) => EditGearScreen(gear: gear),
                     ),
                   );
+                  if (updated != null && mounted) {
+                    setState(() {});
+                  }
                 },
               ),
               const SizedBox(width: 8),
