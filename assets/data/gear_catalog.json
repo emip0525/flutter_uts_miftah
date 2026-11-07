@@ -1,0 +1,272 @@
+[
+  {
+    "id": "gear_01",
+    "name": "Tenda Dome Eiger Storm Shelter 4P",
+    "brand": "Eiger Adventure",
+    "category": "Tenda & Shelter",
+    "price_per_day": 60000,
+    "security_deposit": 100000,
+    "rating": 4.9,
+    "reviews_count": 84,
+    "image_url": "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800",
+    "description": "Tenda dome kapasitas 4 orang dengan bahan double-layer waterproof 3000mm PU. Dirancang khusus untuk menahan terpaan angin badai dan hujan deras di puncak gunung Indonesia.",
+    "specifications": {
+      "Kapasitas": "4 Orang Dewasa",
+      "Bahan Luar": "Polyester 210T PU 3000mm Ripstop",
+      "Frame": "Aluminium Alloy 7001 8.5mm",
+      "Berat": "3.2 kg",
+      "Dimensi": "210 x 210 x 135 cm"
+    },
+    "features": [
+      "Double layer anti kondensasi",
+      "Frame alloy kokoh anti patah",
+      "Dilengkapi pasak aluminium & guyline",
+      "Vestibule luas untuk tempat sepatu & masak"
+    ],
+    "in_stock": true,
+    "stock_count": 6
+  },
+  {
+    "id": "gear_02",
+    "name": "Tenda Naturehike Cloud Up 2 Ultralight",
+    "brand": "Naturehike",
+    "category": "Tenda & Shelter",
+    "price_per_day": 45000,
+    "security_deposit": 80000,
+    "rating": 4.8,
+    "reviews_count": 62,
+    "image_url": "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=800",
+    "description": "Tenda ultralight 2 orang super ringan dengan bahan silnylon 20D. Pilihan favorit solo hiker dan ultralight backpacker untuk summit cepat.",
+    "specifications": {
+      "Kapasitas": "2 Orang",
+      "Bahan Luar": "20D Silicone Coated Nylon 4000mm",
+      "Frame": "7001 Aluminum",
+      "Berat": "1.7 kg",
+      "Dimensi": "210 x 125 x 100 cm"
+    },
+    "features": [
+      "Super ringan hanya 1.7 kg",
+      "Waterproof rating sangat tinggi 4000mm",
+      "Bentuk aerodinamis tahan angin kencang",
+      "Sudah termasuk footprint gratis"
+    ],
+    "in_stock": true,
+    "stock_count": 4
+  },
+  {
+    "id": "gear_03",
+    "name": "Carrier Deuter Aircontact Pro 60+10L",
+    "brand": "Deuter",
+    "category": "Carrier & Tas",
+    "price_per_day": 50000,
+    "security_deposit": 100000,
+    "rating": 4.9,
+    "reviews_count": 110,
+    "image_url": "https://images.unsplash.com/photo-1622260614153-03223fb72052?w=800",
+    "description": "Ransel ekspedisi tangguh dengan sistem suspensi Aircontact yang memindahkan 70% beban langsung ke pinggul. Bantalan empuk dan ventilasi punggung maksimal.",
+    "specifications": {
+      "Kapasitas": "60 + 10 Liter",
+      "Material": "330D PA Ripstop / 600D PES",
+      "Backsystem": "Aircontact System + VariSlide",
+      "Berat": "2.9 kg",
+      "Rain Cover": "Termasuk (Integrated)"
+    },
+    "features": [
+      "Sistem VariSlide pengaturan tinggi punggung",
+      "Akses bukaan depan berbentuk U",
+      "Kompartemen sleeping bag terpisah di bawah",
+      "Raincover original tahan hujan lebat"
+    ],
+    "in_stock": true,
+    "stock_count": 5
+  },
+  {
+    "id": "gear_04",
+    "name": "Carrier Consina Centurion 50L",
+    "brand": "Consina",
+    "category": "Carrier & Tas",
+    "price_per_day": 35000,
+    "security_deposit": 70000,
+    "rating": 4.7,
+    "reviews_count": 45,
+    "image_url": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800",
+    "description": "Tas gunung ergonomis cocok untuk pendakian tektok atau trip santai 2 hari 1 malam di gunung berketinggian sedang.",
+    "specifications": {
+      "Kapasitas": "50 Liter",
+      "Material": "Cordura Ripstop",
+      "Backsystem": "Comfort Foam Back System",
+      "Berat": "1.4 kg",
+      "Dimensi": "65 x 30 x 25 cm"
+    },
+    "features": [
+      "Jaring sirkulasi udara di punggung",
+      "Dua saku samping untuk botol minum",
+      "Tali kompresi samping dan bawah",
+      "Tali dada dengan peluit darurat"
+    ],
+    "in_stock": true,
+    "stock_count": 7
+  },
+  {
+    "id": "gear_05",
+    "name": "Sleeping Bag Bulu Angsa Naturehike CW400",
+    "brand": "Naturehike",
+    "category": "Sleeping Bag & Matras",
+    "price_per_day": 30000,
+    "security_deposit": 60000,
+    "rating": 4.9,
+    "reviews_count": 73,
+    "image_url": "https://images.unsplash.com/photo-1517824806704-9040b037703b?w=800",
+    "description": "Kantung tidur bulu angsa asli (Down Fill 750FP) dengan suhu kenyamanan 0°C sampai -5°C. Sangat hangat namun bisa dikompres hingga sekecil botol 1 liter.",
+    "specifications": {
+      "Filling": "90% White Goose Down 750FP",
+      "Suhu Comfort": "0°C",
+      "Suhu Limit": "-5°C",
+      "Berat": "910 gram",
+      "Ukuran Packing": "16 x 35 cm"
+    },
+    "features": [
+      "Bulu angsa super hangat & ringan",
+      "Kain luar 20D nylon water repellent",
+      "Resleting YKK 2 arah",
+      "Compression sack ultra compact"
+    ],
+    "in_stock": true,
+    "stock_count": 8
+  },
+  {
+    "id": "gear_06",
+    "name": "Kompor Ultralight Windproof & Cooking Set DS-308",
+    "brand": "Fire Maple",
+    "category": "Memasak & Dapur",
+    "price_per_day": 25000,
+    "security_deposit": 50000,
+    "rating": 4.8,
+    "reviews_count": 92,
+    "image_url": "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=800",
+    "description": "Paket komplit memasak di gunung: Kompor anti angin dengan pemantik elektrik + panci nesting 3 susun anodized aluminum dan teko air panas.",
+    "specifications": {
+      "Daya Kompor": "3500 Watt",
+      "Material": "Hard Anodized Aluminum Food Grade",
+      "Isi Set": "Panci besar, panci sedang, wajan, teko 0.8L, spons, mangkok",
+      "Berat Total": "780 gram",
+      "Bahan Bakar": "Tabung gas canister / hi-cook"
+    },
+    "features": [
+      "Anti angin kencang tanpa perlu wind shield tambahan",
+      "Pemantik piezo elektrik otomatis",
+      "Lapisan anti lengket mudah dibersihkan",
+      "Pegangan dilapisi silikon tahan panas"
+    ],
+    "in_stock": true,
+    "stock_count": 10
+  },
+  {
+    "id": "gear_07",
+    "name": "Headlamp Black Diamond Storm 400 Lumen",
+    "brand": "Black Diamond",
+    "category": "Penerangan & Elektronik",
+    "price_per_day": 15000,
+    "security_deposit": 30000,
+    "rating": 4.9,
+    "reviews_count": 58,
+    "image_url": "https://images.unsplash.com/photo-1510312305653-8ed496efae75?w=800",
+    "description": "Senter kepala profesional tahan air IPX67. Cahaya terang 400 lumen dengan jangkauan 100 meter, dilengkapi mode penglihatan malam RGB (merah, hijau, biru).",
+    "specifications": {
+      "Kekuatan Cahaya": "400 Lumen",
+      "Waterproof": "IP67 (tahan terendam air 1m selama 30 menit)",
+      "Baterai": "4x AAA / Baterai isi ulang BD 1500",
+      "Jarak Sorot": "100 meter",
+      "Berat": "120 gram"
+    },
+    "features": [
+      "Teknologi PowerTap untuk ubah intensitas sekali sentuh",
+      "Mode lampu merah anti silau saat di dalam tenda",
+      "Kunci digital agar tidak menyala sendiri di dalam tas",
+      "Strap kepala elastis dan nyaman"
+    ],
+    "in_stock": true,
+    "stock_count": 12
+  },
+  {
+    "id": "gear_08",
+    "name": "Sepatu Trekking Salomon Quest 4 Gore-Tex",
+    "brand": "Salomon",
+    "category": "Sepatu & Sandal",
+    "price_per_day": 55000,
+    "security_deposit": 150000,
+    "rating": 5.0,
+    "reviews_count": 41,
+    "image_url": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800",
+    "description": "Sepatu bot gunung kelas ekspedisi dengan membran GORE-TEX tahan air 100% dan chassis 4D pelindung engkel kaki dari risiko terkilir di jalur berbatu.",
+    "specifications": {
+      "Membran": "GORE-TEX Waterproof & Breathable",
+      "Outsole": "Contagrip TD Traction",
+      "Chassis": "4D Advanced Chassis",
+      "Ukuran Tersedia": "39, 40, 41, 42, 43, 44",
+      "Tinggi Bot": "High Cut Support"
+    },
+    "features": [
+      "Menopang mata kaki dengan stabil di medan curam",
+      "Grip Contagrip tidak licin di lumpur dan batu basah",
+      "Bantalan EnergyCell empuk meredam guncangan lutut",
+      "Tahan air total menyeberang sungai kecil"
+    ],
+    "in_stock": true,
+    "stock_count": 8
+  },
+  {
+    "id": "gear_09",
+    "name": "Trekking Pole Carbon Fiber Dhaulagiri (Sepasang)",
+    "brand": "Dhaulagiri",
+    "category": "Aksesoris Mendaki",
+    "price_per_day": 20000,
+    "security_deposit": 40000,
+    "rating": 4.8,
+    "reviews_count": 66,
+    "image_url": "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800",
+    "description": "Tongkat daki ultralight bahan serat karbon asli. Mengurangi beban tekanan pada lutut hingga 25% saat menuruni punggungan gunung.",
+    "specifications": {
+      "Material": "100% Carbon Fiber 3 Section",
+      "Panjang": "65 cm (lipat) - 135 cm (maksimal)",
+      "Kunci": "Fast Quick Lock System",
+      "Grip": "High Density EVA Foam + Cork",
+      "Berat": "190 gram per pole"
+    },
+    "features": [
+      "Bahan karbon sangat ringan dan fleksibel",
+      "Sistem penguncian cepat (Quick Lock) mudah disetel",
+      "Grip gabus menyerap keringat telapak tangan",
+      "Dilengkapi mud basket & snow basket"
+    ],
+    "in_stock": true,
+    "stock_count": 15
+  },
+  {
+    "id": "gear_10",
+    "name": "Matras Tiup Ultralight Naturehike Air Mattress",
+    "brand": "Naturehike",
+    "category": "Sleeping Bag & Matras",
+    "price_per_day": 20000,
+    "security_deposit": 40000,
+    "rating": 4.7,
+    "reviews_count": 53,
+    "image_url": "https://images.unsplash.com/photo-1504851149312-7a075b496cc7?w=800",
+    "description": "Kasur angin lipat outdoor setebal 6.5 cm dengan bantalan terintegrasi. Menjaga tubuh tetap terisolasi dari dinginnya tanah bebatuan.",
+    "specifications": {
+      "Ketebalan": "6.5 cm saat mengembang",
+      "R-Value": "3.5 (Cold Weather Insulation)",
+      "Material": "Nylon TPU Ripstop",
+      "Berat": "550 gram",
+      "Ukuran": "195 x 59 x 6.5 cm"
+    },
+    "features": [
+      "Bantal ergonomis menyatu",
+      "Katup ganda untuk pompa cepat dan kempis seketika",
+      "Sangat empuk tidak merasakan kerikil di bawah tenda",
+      "Sudah termasuk kantung pompa tiup (pump sack)"
+    ],
+    "in_stock": true,
+    "stock_count": 9
+  }
+]

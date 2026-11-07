@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import '../models/outdoor_gear.dart';
 import '../models/mountain_weather.dart';
+import '../repositories/gear_repository.dart';
 
 class GearProvider extends ChangeNotifier {
+  final GearRepository _repository;
+
   List<OutdoorGear> _gears = [];
   bool _isLoading = false;
   String? _errorMessage;
@@ -13,6 +16,13 @@ class GearProvider extends ChangeNotifier {
 
   MountainWeather? _weather;
   bool _isLoadingWeather = false;
+  String? _weatherError;
+
+  GearProvider({GearRepository? repository})
+      : _repository = repository ?? GearRepository() {
+    loadGears();
+    loadWeather();
+  }
 
   List<OutdoorGear> get gears => _gears;
   bool get isLoading => _isLoading;
@@ -22,6 +32,7 @@ class GearProvider extends ChangeNotifier {
   String get sortBy => _sortBy;
   MountainWeather? get weather => _weather;
   bool get isLoadingWeather => _isLoadingWeather;
+  String? get weatherError => _weatherError;
 
   List<String> get categories => [
         'Semua',
@@ -72,6 +83,37 @@ class GearProvider extends ChangeNotifier {
     return result;
   }
 
+  Future<void> loadGears() async {
+    _isLoading = true;
+    _errorMessage = null;
+    notifyListeners();
+
+    try {
+      final data = await _repository.getGears();
+      _gears = data;
+    } catch (e) {
+      _errorMessage = 'Gagal memuat katalog: $e';
+    } finally {
+      _isLoading = false;
+      notifyListeners();
+    }
+  }
+
+  Future<void> loadWeather() async {
+    _isLoadingWeather = true;
+    _weatherError = null;
+    notifyListeners();
+
+    try {
+      _weather = await _repository.getWeather();
+    } catch (e) {
+      _weatherError = 'Gagal memuat status cuaca: $e';
+    } finally {
+      _isLoadingWeather = false;
+      notifyListeners();
+    }
+  }
+
   void setCategory(String category) {
     _selectedCategory = category;
     notifyListeners();
@@ -84,35 +126,6 @@ class GearProvider extends ChangeNotifier {
 
   void setSortBy(String sort) {
     _sortBy = sort;
-    notifyListeners();
-  }
-
-  void setGears(List<OutdoorGear> items) {
-    _gears = items;
-    _isLoading = false;
-    _errorMessage = null;
-    notifyListeners();
-  }
-
-  void setLoading(bool loading) {
-    _isLoading = loading;
-    notifyListeners();
-  }
-
-  void setError(String? error) {
-    _errorMessage = error;
-    _isLoading = false;
-    notifyListeners();
-  }
-
-  void setWeather(MountainWeather? weatherData) {
-    _weather = weatherData;
-    _isLoadingWeather = false;
-    notifyListeners();
-  }
-
-  void setLoadingWeather(bool loading) {
-    _isLoadingWeather = loading;
     notifyListeners();
   }
 }
