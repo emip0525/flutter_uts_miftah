@@ -22,6 +22,7 @@ class MountainWeatherCard extends StatelessWidget {
         child: const Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
             children: [
               SizedBox(
                 width: 18,
@@ -29,7 +30,13 @@ class MountainWeatherCard extends StatelessWidget {
                 child: CircularProgressIndicator(strokeWidth: 2, color: AppConstants.primaryGreen),
               ),
               SizedBox(width: 12),
-              Text('Mengambil data cuaca live via REST API...', style: TextStyle(fontSize: 12)),
+              Flexible(
+                child: Text(
+                  'Mengambil data cuaca live via REST API...',
+                  style: TextStyle(fontSize: 12),
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
             ],
           ),
         ),
@@ -92,20 +99,26 @@ class MountainWeatherCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: const [
-                  Icon(Icons.cloud_outlined, color: Colors.white, size: 18),
-                  SizedBox(width: 6),
-                  Text(
-                    'Info Cuaca Puncak (REST API)',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
+              const Expanded(
+                child: Row(
+                  children: [
+                    Icon(Icons.cloud_outlined, color: Colors.white, size: 18),
+                    SizedBox(width: 6),
+                    Expanded(
+                      child: Text(
+                        'Info Cuaca Puncak (REST API)',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
+              const SizedBox(width: 8),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                 decoration: BoxDecoration(
@@ -129,22 +142,25 @@ class MountainWeatherCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    '${weather.temperature.toStringAsFixed(1)}°C',
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 26,
-                      fontWeight: FontWeight.bold,
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '${weather.temperature.toStringAsFixed(1)}°C',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 26,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  Text(
-                    weather.condition,
-                    style: const TextStyle(color: Colors.white70, fontSize: 12),
-                  ),
-                ],
+                    Text(
+                      weather.condition,
+                      style: const TextStyle(color: Colors.white70, fontSize: 12),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ),
               ),
               Row(
                 children: [

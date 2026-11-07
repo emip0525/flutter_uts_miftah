@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -14,14 +15,16 @@ class DatabaseService {
   }
 
   Future<void> _initSupabase() async {
+    if (_isSupabaseInitialized) return;
+    if (!kIsWeb && Platform.environment.containsKey('FLUTTER_TEST')) {
+      return;
+    }
     try {
-      if (Supabase.instance.client.auth.currentSession == null && !_isSupabaseInitialized) {
-        await Supabase.initialize(
-          url: AppConstants.supabaseUrl,
-          anonKey: AppConstants.supabaseAnonKey, // ignore: deprecated_member_use
-        );
-        _isSupabaseInitialized = true;
-      }
+      await Supabase.initialize(
+        url: AppConstants.supabaseUrl,
+        anonKey: AppConstants.supabaseAnonKey, // ignore: deprecated_member_use
+      );
+      _isSupabaseInitialized = true;
     } catch (e) {
       debugPrint('Supabase init notice (local sync fallback active): $e');
     }

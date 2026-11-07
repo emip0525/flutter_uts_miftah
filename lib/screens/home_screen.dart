@@ -120,9 +120,14 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Text(
-                          '${AppConstants.studentName} (${AppConstants.studentNim})',
-                          style: const TextStyle(color: Colors.white70, fontSize: 11),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Text(
+                            '${AppConstants.studentName} (${AppConstants.studentNim})',
+                            textAlign: TextAlign.end,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(color: Colors.white70, fontSize: 11),
+                          ),
                         ),
                       ],
                     ),
@@ -161,12 +166,15 @@ class HomeScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
-                          'Kategori Perlengkapan',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xFF1B4332),
+                        const Expanded(
+                          child: Text(
+                            'Kategori Perlengkapan',
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF1B4332),
+                            ),
                           ),
                         ),
                         Text(
@@ -213,14 +221,18 @@ class HomeScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      'Rekomendasi Alat Outdoor',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF1B4332),
+                    const Expanded(
+                      child: Text(
+                        'Rekomendasi Alat Outdoor',
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF1B4332),
+                        ),
                       ),
                     ),
+                    const SizedBox(width: 8),
                     Text(
                       'Tersedia untuk disewa',
                       style: TextStyle(fontSize: 12, color: Colors.grey.shade600),
